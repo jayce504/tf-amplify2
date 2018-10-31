@@ -1,0 +1,399 @@
+body {
+  font-family: "Abel", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.center {
+  vertical-align: middle;
+}
+
+.row {
+  border: 5px solid #ded5d8;
+  color: #0f1626;
+  background-color: #474b4f;
+  font-size: 150%;
+  margin-top: 3em;
+  width: auto;
+  padding: 3em;
+}
+
+input[type="text","email","password"],
+textarea {
+  background-color: #fff;
+}
+
+.homepage-text-1 {
+  margin-left: 150px;
+}
+
+.homepage-text-2 {
+  margin-left: 150px;
+}
+
+.user-name {
+  padding: 0 !important ;
+  padding-left: 5px;
+  padding-top: 15px !important;
+  text-align: center;
+
+  a: {
+    color: black !important;
+    margin: 0 !important;
+    padding: 5px !important;
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:focus {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .nav-item:hover {
+    text-decoration: none;
+    color: #86c232;
+  }
+
+  .btn-danger:hover,
+  .btn-danger:focus {
+    background-color: darken(#d9534f, 20%) !important;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: darken(#18a52d, 20%) !important;
+    text-decoration: none;
+  }
+}
+
+.btn-success:visited {
+  color: #fff;
+}
+
+.btn-primary:visited,
+.btn-danger:visited {
+  color: #fff;
+}
+
+.features {
+  ul {
+    margin-left: 0;
+    padding-left: 15px;
+  }
+}
+
+.jumbotron-fluid {
+  /* background-image: url(../images/outdoor-business.jpg); */
+  background-size: cover;
+  background-position: center center;
+  height: 40em;
+  margin-bottom: 0;
+}
+
+.form-control-nav {
+  background-color: #86c232;
+  border: none;
+  height: 2.3em;
+  border-radius: 5%;
+  color: #222629;
+}
+
+.navbar-button {
+  background-color: #86c232;
+}
+
+.nav-right {
+  float: right;
+}
+
+.button {
+  font-size: 0.4em;
+  color: #222629;
+  background-color: #86c232;
+  border: solid 0.2em #86c232;
+}
+
+.btn-primary {
+  border: 0.75em solid #86c232;
+  color: #0f1626;
+  background-color: #86c232;
+  font-size: 1em;
+  padding: 0.01em;
+  text-decoration: none;
+}
+
+.button-pricing {
+  color: #222629;
+  background-color: #86c232;
+  border-left: 0.1vw solid #86c232;
+  border-right: 0.1vw solid #86c232;
+  border-radius: 25px;
+  font-size: 3vw;
+  text-decoration: none;
+  margin-top: 5vw;
+  padding: 0.2vw;
+}
+
+.button-pricing:hover {
+  text-decoration: none;
+}
+
+.btn-link {
+  color: #86c232;
+}
+
+.btn-link:hover {
+  color: #86c232;
+  text-decoration: none;
+}
+
+table {
+  color: 86c232;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #222629;
+  width: 100%;
+  text-align: center;
+}
+
+.first-landing-div {
+  text-align: center;
+  background-color: #585a5e;
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+  color: #86c232;
+}
+
+.features-div {
+  color: #86c232;
+  background-color: #222629;
+  text-align: center;
+}
+
+.second-landing-div {
+  text-align: center;
+  background-color: #585a5e;
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+  border-left: 9em solid #585a5e;
+  border-right: 9em solid #585a5e;
+  color: #86c232;
+}
+
+.fans-div {
+  color: #86c232;
+  background-color: #222629;
+  text-align: center;
+}
+
+.fourth-landing-div {
+  text-align: center;
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+  color: #86c232;
+  border-left: 8em solid #6b6e70;
+  border-right: 8em solid #6b6e70;
+  background-color: #6b6e70;
+}
+
+.landing-container {
+  padding-left: 0em;
+}
+
+.landing-box {
+  margin-top: 2em;
+  padding: 0.1em;
+  width: 45vw;
+}
+
+.landing-text {
+  color: #86c232;
+  border: 0.2em solid #86c232;
+  border-radius: 25px;
+  height: 3.8em;
+  margin-bottom: 0.1em;
+  margin-top: 0.5em;
+  text-align: center;
+  background: #222629;
+  font-size: 450%;
+  border: solid #222629 5px;
+  opacity: 0.9;
+}
+
+.landing-button {
+  color: #86c232;
+  height: 1em;
+  border: 0.001em solid #474b4f;
+  border-radius: 25px;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  text-align: center;
+  background-color: #474b4f;
+  font-size: 40%;
+  padding: 0.3em;
+  opacity: 1;
+}
+
+.landing-button:hover {
+  text-decoration: none;
+  color: #222629;
+  background-color: #86c232;
+}
+
+.landing-subtext {
+  font-size: 50%;
+}
+
+.non-landing {
+  padding-left: 375px;
+}
+
+.no-left-padding {
+  padding-left: 0 !important;
+}
+
+.listing {
+  list-style: none;
+  padding-left: 0;
+}
+
+.navbar-nav {
+  background-color: #222629;
+  color: #86c232;
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: #222629;
+  color: #86c232;
+  font-size: 1vw;
+}
+
+.navbar-brand {
+  background-color: #222629;
+  color: #86c232;
+  font-weight: bold;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+  font-size: 1.1vw;
+}
+
+.navbar-brand:hover {
+  background-color: #86c232;
+  color: #222629;
+}
+
+.heading-nav {
+  color: #86c232;
+  float: right;
+  padding-top: 15px;
+  padding-right: 20px;
+  list-style-type: none;
+  background-color: #222629;
+}
+
+#container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.75em;
+}
+
+.container-text {
+  display: flex;
+  justify-content: space-between;
+  color: #86c232;
+  margin: 0.75em;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+}
+
+.container-text-pricing {
+  align-items: center;
+  color: #86c232;
+  margin: auto;
+  padding-top: 0.75vw;
+  padding-bottom: 0.75vw;
+  background-color: #222629;
+  font-size: 2vw;
+}
+
+.container-text-beigebg {
+  display: flex;
+  justify-content: space-between;
+  color: #86c232;
+  margin: 0.75em;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+}
+
+.nav-link {
+  color: inherit;
+}
+
+.nav-link:hover {
+  background-color: #86c232;
+  color: #222629;
+}
+
+.search-bar {
+  padding-right: 2em;
+}
+
+#dropdownMenu1 {
+  margin-bottom: 15px;
+}
+
+.client-actions {
+  border-top: 1px solid #eaeaea;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.form-container {
+  border: 3px solid #474b4f;
+  border-radius: 25px;
+  font-size: 1vw;
+  padding: 50px;
+  background-color: #474b4f;
+  color: #86c232;
+  margin-top: 2em;
+  margin-bottom: 3em;
+}
+
+.data-container {
+  border: 3px solid #6b6e70;
+  border-radius: 25px;
+  padding: 50px;
+  margin-top: 150px;
+  background-color: #474b4f;
+  color: #86c232;
+  font-size: 1.3vw;
+}
+
+.form {
+  background-color: #6b6e70;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.75em;
+  border: 3px solid #474b4f;
+  background-color: #474b4f;
+  color: #86c232;
+}
+
+.footer-landing {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.75em;
+  border: 3px solid #222629;
+  background-color: #222629;
+  color: #86c232;
+}

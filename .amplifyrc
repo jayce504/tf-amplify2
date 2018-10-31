@@ -1,0 +1,14 @@
+{
+    "providers": {
+        "awscloudformation": {
+            "AuthRoleName": "tfamplify2-20181028192730-authRole",
+            "UnauthRoleArn": "arn:aws:iam::056319651531:role/tfamplify2-20181028192730-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::056319651531:role/tfamplify2-20181028192730-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "tfamplify2-20181028192730-deployment",
+            "UnauthRoleName": "tfamplify2-20181028192730-unauthRole",
+            "StackName": "tfamplify2-20181028192730",
+            "StackId": "arn:aws:cloudformation:us-east-1:056319651531:stack/tfamplify2-20181028192730/0a737ed0-db09-11e8-8a83-50d5ca6e604a"
+        }
+    }
+}
