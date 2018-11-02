@@ -2,13 +2,14 @@ import gql from "graphql-tag";
 
 export default gql(`
 query {
-  listEvents(limit: 1000) {
+  listClients(limit: 1000) {
     items {
       id
       name
-      where
-      when
-      description
+      address
+      phoneNumber
+      allegedOffenses
+      courtDates
       comments {
         items {
           commentId

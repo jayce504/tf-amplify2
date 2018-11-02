@@ -3,7 +3,7 @@ import React from 'react';
 const NavBar = () => {
     return (<div>
         <nav className="navbar navbar-expand-lg">
-          <a className="navbar-brand" to="#">
+          <a className="navbar-brand" href="#">
             TrialFile
           </a>
           <button
@@ -20,7 +20,7 @@ const NavBar = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item active">
-                <a className="nav-link" to="/logout">
+                <a className="nav-link" href="/logout">
                   Logout <span className="sr-only">(current)</span>
                 </a>
               </li>

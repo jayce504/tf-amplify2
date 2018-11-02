@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { graphql } from "react-apollo";
 import { v4 as uuid } from "uuid";
 
-import MutationCommentOnEvent from "../GraphQL/MutationCommentOnEvent";
-import QueryGetEvent from "../GraphQL/QueryGetEvent";
+import MutationCommentOnClient from "../GraphQL/MutationCommentOnClient";
+import QueryGetClient from "../GraphQL/QueryGetClient";
 import moment from "moment";
 
 class NewComment extends Component {
@@ -25,13 +25,13 @@ class NewComment extends Component {
         e.stopPropagation();
         e.preventDefault();
         const { comment } = this.state;
-        const { eventId, createComment } = this.props;
+        const { clientId, createComment } = this.props;
 
         this.setState({ loading: true });
 
         await createComment({
             ...comment,
-            eventId,
+            clientId,
             createdAt: moment.utc().format(),
         });
 
@@ -60,21 +60,21 @@ class NewComment extends Component {
 }
 
 const NewCommentWithData = graphql(
-    MutationCommentOnEvent,
+    MutationCommentOnClient,
     {
         options: props => ({
-            update: (proxy, { data: { commentOnEvent } }) => {
-                const query = QueryGetEvent;
-                const variables = { id: commentOnEvent.eventId };
+            update: (proxy, { data: { commentOnClient } }) => {
+                const query = QueryGetClient;
+                const variables = { id: commentOnClient.clientId };
                 const data = proxy.readQuery({ query, variables });
 
-                data.getEvent = {
-                    ...data.getEvent,
+                data.getClient = {
+                    ...data.getClient,
                     comments: {
-                        ...data.getEvent.comments,
+                        ...data.getClient.comments,
                         items: [
-                            ...data.getEvent.comments.items.filter(c => c.commentId !== commentOnEvent.commentId),
-                            commentOnEvent,
+                            ...data.getClient.comments.items.filter(c => c.commentId !== commentOnClient.commentId),
+                            commentOnClient,
                         ]
                     }
                 };

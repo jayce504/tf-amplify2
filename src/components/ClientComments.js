@@ -3,12 +3,12 @@ import { graphql } from "react-apollo";
 
 import moment from 'moment';
 
-import QueryGetEvent from "../GraphQL/QueryGetEvent";
-import SubsriptionEventComments from "../GraphQL/SubsriptionEventComments";
+import QueryGetClient from "../GraphQL/QueryGetClient";
+import SubsriptionClientComments from "../GraphQL/SubsriptionClientComments";
 
 import NewComment from "./NewComment";
 
-class EventComments extends Component {
+class ClientComments extends Component {
 
     subscription;
 
@@ -35,7 +35,7 @@ class EventComments extends Component {
     }
 
     render() {
-        const { comments: { items }, eventId } = this.props;
+        const { comments: { items }, clientId } = this.props;
 
         return (
             <div className="ui items">
@@ -43,7 +43,7 @@ class EventComments extends Component {
                     <div className="ui comments">
                         <h4 className="ui dividing header">Comments</h4>
                         {[].concat(items).sort((a, b) => a.createdAt.localeCompare(b.createdAt)).map(this.renderComment)}
-                        <NewComment eventId={eventId} />
+                        <NewComment eventId={clientId} />
                     </div>
                 </div>
             </div>
@@ -52,31 +52,31 @@ class EventComments extends Component {
 
 }
 
-const EventCommentsWithData = graphql(
-    QueryGetEvent,
+const ClientCommentsWithData = graphql(
+    QueryGetClient,
     {
-        options: ({ eventId: id }) => ({
+        options: ({ clientId: id }) => ({
             fetchPolicy: 'cache-first',
             variables: { id }
         }),
         props: props => ({
-            comments: props.data.getEvent ? props.data.getEvent.comments : { items: [] },
+            comments: props.data.getClient ? props.data.getClient.comments : { items: [] },
             subscribeToComments: () => props.data.subscribeToMore({
-                document: SubsriptionEventComments,
+                document: SubsriptionClientComments,
                 variables: {
-                    eventId: props.ownProps.eventId,
+                    eventId: props.ownProps.clientId,
                 },
-                updateQuery: (prev, { subscriptionData: { data: { subscribeToEventComments } } }) => {
+                updateQuery: (prev, { subscriptionData: { data: { subscribeToClientComments } } }) => {
                     const res = {
                         ...prev,
-                        getEvent: {
-                            ...prev.getEvent,
+                        getClient: {
+                            ...prev.getClient,
                             comments: {
                                 __typename: 'CommentConnections',
-                                ...prev.getEvent.comments,
+                                ...prev.getClient.comments,
                                 items: [
-                                    ...prev.getEvent.comments.items.filter(c => c.commentId !== subscribeToEventComments.commentId),
-                                    subscribeToEventComments,
+                                    ...prev.getClient.comments.items.filter(c => c.commentId !== subscribeToClientComments.commentId),
+                                    subscribeToClientComments,
                                 ]
                             }
                         }
@@ -87,6 +87,6 @@ const EventCommentsWithData = graphql(
             })
         }),
     },
-)(EventComments);
+)(ClientComments);
 
-export default EventCommentsWithData;
+export default ClientCommentsWithData;

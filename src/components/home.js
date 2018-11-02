@@ -1,9 +1,9 @@
 import React from 'react';
-import AllEvents from './allEvents';
+import AllClients from './allClients';
 
 const Home = () => (
     <div className="ui container">
-      <AllEvents />
+      <AllClients />
     </div>
   );
 

@@ -1,19 +1,17 @@
 import gql from "graphql-tag";
 
 export default gql(`
-query($id: ID!) {
-  getEvent(id: $id) {
+mutation($id: ID!) {
+  deleteClient(id: $id) {
     id
     name
-    where
-    when
-    description
+    address
+    phoneNumber
+    allegedOffenses
+    courtDates
     comments {
-      __typename
       items {
         commentId
-        content
-        createdAt
       }
     }
   }

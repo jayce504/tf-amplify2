@@ -10,10 +10,9 @@ import "semantic-ui-css/semantic.min.css";
 import 'react-datepicker/dist/react-datepicker.css';
 import './App.css';
 
-import NewEvent from './components/NewEvent';
-import ViewEvent from './components/ViewEvent';
+import NewClient from './components/NewClient';
+import ViewClient from './components/ViewClient';
 import { ApolloProvider } from 'react-apollo';
-
 
 const App = () => (
   <div>
@@ -22,8 +21,8 @@ const App = () => (
   <Router>
     <div>
       <Route path="/" component={Home} />
-      <Route path="/event/:id" component={ViewEvent} />
-      <Route path="/newEvent" component={NewEvent} />
+      <Route path="/event/:id" component={ViewClient} />
+      <Route path="/newEvent" component={NewClient} />
       <Route path="/logout" component={Logout} />
     </div>
   </Router>
