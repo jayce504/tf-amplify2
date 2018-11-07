@@ -7,10 +7,10 @@ import QueryAllClients from "../GraphQL/QueryAllClients";
 import QueryGetClient from "../GraphQL/QueryGetClient";
 import MutationCreateClient from "../GraphQL/MutationCreateClient";
 
-import DatePicker from 'react-datepicker';
-import moment from 'moment';
+// import DatePicker from 'react-datepicker';
+// import moment from 'moment';
 
-import DateTimePickerCustomInput from "./DateTimePickerCustomInput";
+// import DateTimePickerCustomInput from "./DateTimePickerCustomInput";
 
 class NewClient extends Component {
 
@@ -24,7 +24,6 @@ class NewClient extends Component {
             address: '',
             phoneNumber: '',
             allegedOffenses: '',
-            courtDates: ''
         }
     };
 
@@ -76,33 +75,14 @@ class NewClient extends Component {
                     <label htmlFor="allegedOffenses">Alleged Offenses</label>
                     <input type="text" id="allegedOffenses" value={client.allegedOffenses} onChange={this.handleChange.bind(this, 'allegedOffenses')} />
                     </div>
-                    </div>
-                    <div className="field required eight wide">
-                    <label htmlFor="courtDates">Hearing Dates</label>
-                    <input type="text" id="courtDates" value={client.courtDates} onChange={this.handleChange.bind(this, 'courtDates')} />
-                    </div>
-                        <DatePicker
-                            className="ui container"
-                            customInput={<DateTimePickerCustomInput />}
-                            id="when"
-                            selected={moment(client.courtDates)}
-                            onChange={this.handleDateChange.bind(this, 'courtDates')}
-                            peekNextMonth
-                            showMonthDropdown
-                            showYearDropdown
-                            dropdownMode="select"
-                            showTimeSelect
-                            timeFormat="hh:mm a"
-                            timeIntervals={15}
-                            dateFormat="LL LT"
-                        />
-                    </div>
                     <div className="ui buttons">
                         <Link to="/" className="ui button">Cancel</Link>
                         <div className="or"></div>
                         <button className="ui positive button" onClick={this.handleSave}>Save</button>
                     </div>
-                    </div>
+                </div>
+                </div>
+                </div>
         )
         }
     }
@@ -114,7 +94,7 @@ export default graphql(
             createClient: (client) => {
                 return props.mutate({
                     update: (proxy, { data: { createClient } }) => {
-                        // Update QueryAllEvents
+                        // Update QueryAllClients
                         const query = QueryAllClients;
                         const data = proxy.readQuery({ query });
 
@@ -132,9 +112,9 @@ export default graphql(
                     variables: client,
                     optimisticResponse: () => ({
                         createClient: {
-                            ...client, id: uuid(), __typename: 'Client', comments: { __typename: 'CommentConnection', items: [] }
+                            ...client, id: uuid(), __typename: 'Client', items: [] }
                         }
-                    }),
+                    ),
                 })
             }
         })

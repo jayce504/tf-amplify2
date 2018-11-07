@@ -8,14 +8,5 @@ query($id: ID!) {
     address
     phoneNumber
     allegedOffenses
-    courtDates
-    comments {
-      __typename
-      items {
-        commentId
-        content
-        createdAt
-      }
-    }
   }
 }`);

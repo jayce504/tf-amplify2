@@ -86,7 +86,7 @@ const NewCommentWithData = graphql(
             createComment: (comment) => {
                 return props.mutate({
                     variables: { ...comment },
-                    optimisticResponse: { commentOnEvent: { ...comment, __typename: 'Comment', commentId: uuid() } },
+                    optimisticResponse: { commentOnClient: { ...comment, __typename: 'Comment', commentId: uuid() } },
                 });
             }
         })

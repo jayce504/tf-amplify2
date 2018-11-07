@@ -8,7 +8,6 @@ mutation($id: ID!) {
     address
     phoneNumber
     allegedOffenses
-    courtDates
     comments {
       items {
         commentId

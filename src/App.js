@@ -5,7 +5,7 @@ import { withAuthenticator } from 'aws-amplify-react'
 import NavBar from './components/navBar.jsx';
 import Logout from './components/logout';
 import Home from './components/home'
-import Client from './components/Client'
+import client from './components/Client'
 import "semantic-ui-css/semantic.min.css";
 import 'react-datepicker/dist/react-datepicker.css';
 import './App.css';
@@ -16,13 +16,13 @@ import { ApolloProvider } from 'react-apollo';
 
 const App = () => (
   <div>
-  <ApolloProvider client = {Client}>
   <NavBar />
+  <ApolloProvider client = {client}>
   <Router>
     <div>
-      <Route path="/" component={Home} />
-      <Route path="/event/:id" component={ViewClient} />
-      <Route path="/newEvent" component={NewClient} />
+      <Route exact={true} path="/" component={Home} />
+      <Route path="/client/:id" component={ViewClient} />
+      <Route path="/newClient" component={NewClient} />
       <Route path="/logout" component={Logout} />
     </div>
   </Router>

@@ -19,7 +19,7 @@ class AllClients extends Component {
     async handleDeleteClick(client, e) {
         e.preventDefault();
 
-        if (window.confirm(`Are you sure you want to delete ${client.name} ?`)) {
+        if (window.confirm(`Are you sure you want to delete client ${client.id}`)) {
             const { deleteClient } = this.props;
 
             await deleteClient(client);
@@ -49,7 +49,6 @@ class AllClients extends Component {
                 <p><i className="icon calendar"></i>{client.address}</p>
                 <p><i className="icon clock"></i>{client.phoneNumber}</p>
                 <p><i className="icon marker"></i>{client.allegedOffenses}</p>
-                <p><i className="icon marker"></i>{client.courtDates}</p>
             </div>
             <div className="extra content">
                 <i className="icon comment"></i> {client.comments.items.length} comments
@@ -58,7 +57,7 @@ class AllClients extends Component {
                 <i className="trash icon"></i>
                 Delete
             </button>
-        </Link>
+        // </Link>
     );
 
     render() {
@@ -97,7 +96,7 @@ export default withApollo(compose(
                 fetchPolicy: 'cache-first',
             },
             props: ({ data: { listClients = { items: [] } } }) => ({
-                clients: listClients.items
+                // clients: listClients.items
             })
         }
     ),

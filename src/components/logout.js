@@ -15,7 +15,7 @@ class Logout extends Component {
       .then(data => console.log(data))
       .catch(err => console.log(err));
 
-    window.location = "/";
+    window.location = "https://tfhomepage.herokuapp.com/";
   }
 
   render() {

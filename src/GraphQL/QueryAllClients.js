@@ -9,12 +9,6 @@ query {
       address
       phoneNumber
       allegedOffenses
-      courtDates
-      comments {
-        items {
-          commentId
-        }
-      }
     }
   }
 }`);

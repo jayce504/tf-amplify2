@@ -43,7 +43,7 @@ class ClientComments extends Component {
                     <div className="ui comments">
                         <h4 className="ui dividing header">Comments</h4>
                         {[].concat(items).sort((a, b) => a.createdAt.localeCompare(b.createdAt)).map(this.renderComment)}
-                        <NewComment eventId={clientId} />
+                        <NewComment clientId={clientId} />
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@ const ClientCommentsWithData = graphql(
             subscribeToComments: () => props.data.subscribeToMore({
                 document: SubsriptionClientComments,
                 variables: {
-                    eventId: props.ownProps.clientId,
+                    clientId: props.ownProps.clientId,
                 },
                 updateQuery: (prev, { subscriptionData: { data: { subscribeToClientComments } } }) => {
                     const res = {

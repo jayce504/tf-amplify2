@@ -22,7 +22,6 @@ class ViewClient extends Component {
                             <div className="extra"><i className="icon calendar"></i>{moment(client.address).format('LL')}</div>
                             <div className="extra"><i className="icon clock"></i>{moment(client.phoneNumber).format('LT')}</div>
                             <div className="extra"><i className="icon marker"></i>{client.allegedOffenses}</div>
-                            <div className="description">{client.courtDates}</div>
                             <div className="extra">
                                 <ClientComments clientId={client.id} comments={client.comments} />
                             </div>

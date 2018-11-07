@@ -1,7 +1,7 @@
 import AWSAppSyncClient, { defaultDataIdFromObject } from "aws-appsync";
 import appSyncConfig from "../aws-exports";
 
-const Client = new AWSAppSyncClient({
+const client = new AWSAppSyncClient({
     url: appSyncConfig.aws_appsync_graphqlEndpoint,
     region: appSyncConfig.aws_appsync_region,
     auth: {
@@ -15,8 +15,6 @@ const Client = new AWSAppSyncClient({
         if (!id) {
           const { __typename: typename } = obj;
           switch (typename) {
-            case 'Comment':
-              return `${typename}:${obj.commentId}`;
             default:
               return id;
           }
@@ -27,4 +25,4 @@ const Client = new AWSAppSyncClient({
     }
   });
 
-  export default Client
+  export default client
